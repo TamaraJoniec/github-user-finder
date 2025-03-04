@@ -1,0 +1,43 @@
+@use "../variables" as *;
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-xl;
+  width: 100%;
+  margin-top: $spacing-xl;
+
+  // Tablet view (2 columns)
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Mobile view (1 column)
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.user-results {
+  width: 100%;
+
+  h3 {
+    color: $text-secondary;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: $spacing-lg;
+    text-align: center;
+  }
+}
+
+.loading,
+.error {
+  text-align: center;
+  padding: $spacing-xl;
+  color: $text-secondary;
+  font-size: 1.1rem;
+
+  &.error {
+    color: #ff3b30; // Apple's red color
+  }
+}
