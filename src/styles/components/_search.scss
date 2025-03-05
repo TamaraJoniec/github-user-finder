@@ -1,37 +1,38 @@
 @use "../variables" as *;
 
-.search-container {
+// .search-container {
+//   width: 100%;
+//   max-width: 1200px;
+//   margin: 0 auto;
+
+.search-input {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto $spacing-xl;
+  max-width: -webkit-fill-available;
+  padding: $spacing-md $spacing-lg;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: $radius-lg;
+  background: $card-background;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: $text-primary;
+  transition: all $transition-normal;
+  box-shadow: $shadow-sm;
+  font-family: $font-family;
 
-  .search-input {
-    width: 100%;
-    padding: $spacing-md $spacing-lg;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: $radius-lg;
-    background: $card-background;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    color: $text-primary;
-    transition: all $transition-normal;
-    box-shadow: $shadow-sm;
-    font-family: $font-family;
+  &::placeholder {
+    color: $text-secondary;
+  }
 
-    &::placeholder {
-      color: $text-secondary;
-    }
+  &:focus {
+    outline: none;
+    box-shadow: $shadow-md, 0 0 0 4px rgba($apple-blue, 0.1);
+    background: $white;
+  }
 
-    &:focus {
-      outline: none;
-      box-shadow: $shadow-md, 0 0 0 4px rgba($apple-blue, 0.1);
-      background: $white;
-    }
-
-    &:hover {
-      box-shadow: $shadow-md;
-      background: $white;
-    }
+  &:hover {
+    box-shadow: $shadow-md;
+    background: $white;
   }
 }
+// }
